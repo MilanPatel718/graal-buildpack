@@ -1,3 +1,4 @@
+***Modified from jkutner, added line in compile script to run "gu install R" so that Polyglot functionality of GraalVM included for Heroku Deployment***
 # GraalVM Buildpack
 
 This [buildpack](https://devcenter.heroku.com/articles/buildpacks) will install the [GraalVM](https://github.com/oracle/graal) Community Edition.
