@@ -21,6 +21,7 @@ install_graal() {
 
   echo "-----> Installing GraalVM"
   curl --retry 3 -sL "$url" | tar xzm -C $jdk_dir --strip-components=1
+  gu install R
   echo "       - done"
 }
 
