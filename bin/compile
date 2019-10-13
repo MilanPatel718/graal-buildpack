@@ -21,7 +21,6 @@ install_graal() {
 
   echo "-----> Installing GraalVM"
   curl --retry 3 -sL "$url" | tar xzm -C $jdk_dir --strip-components=1
-  gu install R
   echo "       - done"
 }
 
@@ -60,3 +59,4 @@ JVM_COMMON_URL="https://raw.githubusercontent.com/heroku/heroku-buildpack-jvm-co
 install_graal "$JDK_DIR" "$GRAAL_URL"
 create_profile_scripts "$BUILD_DIR" "$JVM_COMMON_URL"
 create_export_script "$JDK_DIR" "$(pwd)"
+gu install R
