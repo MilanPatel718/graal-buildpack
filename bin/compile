@@ -43,6 +43,7 @@ create_export_script() {
   if [ -w ${home} ]; then
     cat << EOF > ${home}/export
 export JAVA_HOME=$jdk_dir
+$JAVA_HOME/jre/bin/gu install R
 export PATH=\$JAVA_HOME/bin:\$PATH
 export LD_LIBRARY_PATH="\$JAVA_HOME/jre/lib/amd64/server:\$LD_LIBRARY_PATH"
 EOF
@@ -59,4 +60,3 @@ JVM_COMMON_URL="https://raw.githubusercontent.com/heroku/heroku-buildpack-jvm-co
 install_graal "$JDK_DIR" "$GRAAL_URL"
 create_profile_scripts "$BUILD_DIR" "$JVM_COMMON_URL"
 create_export_script "$JDK_DIR" "$(pwd)"
-$JAVA_HOME/jre/bin/gu install R
